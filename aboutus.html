@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="aboutus_styles.css">
+</head>
+<body>
+    <section class="about-section">
+        <div class="text-container">
+            <h1>About Our Company</h1>
+            <p>We are dedicated to providing the best services in the industry.</p>
+        </div>
+        <div class="image-container">
+            <img src="hacker-3342696_1280.jpg" alt="us">
+        </div>
+    </section>
+
+    <div class="dropdown">
+        <div class="dropdown-item" onclick="toggleDropdown('service')">Service Description</div>
+        <div id="service" class="dropdown-content">
+            <p>We offer a variety of services tailored to your needs.</p>
+            <img src="service-image-url.jpg" alt="Service Image">
+        </div>
+
+        <div class="dropdown-item" onclick="toggleDropdown('history')">Company History</div>
+        <div id="history" class="dropdown-content">
+            <p>Our company has a rich history of excellence.</p>
+            <img src="history-image-url.jpg" alt="History Image">
+        </div>
+
+        <div class="dropdown-item" onclick="toggleDropdown('works')">Previous Works</div>
+        <div id="works" class="dropdown-content">
+            <p>Take a look at some of our previous projects.</p>
+            <img src="works-image-url.jpg" alt="Works Image">
+        </div>
+
+        <div class="dropdown-item" onclick="toggleDropdown('goals')">Future Goals</div>
+        <div id="goals" class="dropdown-content">
+            <p>We aim to expand our services globally.</p>
+            <img src="goals-image-url.jpg" alt="Goals Image">
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
