@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackhex</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        window.onload = function() {
+            if (!localStorage.getItem('hasVisited')) {
+                localStorage.setItem('hasVisited', 'true');
+                window.location.href = 'start_page.html';
+            }
+        };
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <div class="dropdown" id="dropdownMenu">
+            <a class="dropdown_button" href="#home">Home</a>
+            <a class="dropdown_button" href="#contact_container">Contact Us</a>
+            <a class="dropdown_button" href="#description">About Us</a>
+            <a class="dropdown_button" href="shop.html">Shop</a>
+        </div>
+        <div class="logo">
+            <a href="index.html">⌬black hex</a>
+        </div>
+        <button class="login-btn" onclick="location.href='login.html'">Login</button>
+    </nav>
+
+    <header class="header_h1">
+        <h1 class="header_text">Navigate here</h1>
+    </header>
+    <div class="slider">
+        <div class="slides">
+            <a href="shop.html">
+                <img src="SHOPSERVICES.png" class="slide" id="slide1">
+            </a>
+            <a href="#description">
+                <img src="ABOUTUS.png" class="slide" id="slide2">
+            </a>
+            <a href="#contact_container">
+                <img src="CONTACTUS.png" class="slide" id="slide3">
+            </a>
+        </div>
+        <div class="buttons">
+            <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
+        </div>
+    </div>
+
+    <div class="description" id="description">
+        <div class="text_description">
+            <h2>About Blackhex</h2>
+            <p>At BlackHex, we are dedicated to providing top-tier security and protection services for individuals, corporations, and high-profile clients worldwide. With years of experience in the industry, we specialize in personal protection, private investigations, event security, and advanced risk management solutions.</p>
+            <p>Our team of highly trained professionals includes former military personnel, law enforcement experts, and security specialists, all committed to ensuring the safety and privacy of our clients. Whether it’s safeguarding executives, conducting discreet investigations, or managing security for large-scale events, BlackHex combines cutting-edge technology and proven security practices to deliver results.</p>
+            <p>We understand that every client’s needs are unique, which is why we tailor our services to match each specific situation. From personal protection details to corporate security audits, BlackHex operates with the utmost discretion, professionalism, and precision.</p>
+            <p>At BlackHex, your safety is our mission.</p>
+            <br>
+            <h2>Previous work</h2>
+            <h3>High-Profile Executive Protection for International Tech CEO</h3>
+            <p>Client: CEO of a Global Technology Company</p>
+            <p>Challenge: The client required 24/7 personal protection during a high-stakes international business summit involving multiple countries and high-level officials.</p>
+            <p>Solution: BlackHex deployed a highly trained personal protection detail, including close-protection agents and secure transportation. We conducted a thorough risk assessment, developed multiple evacuation routes, and coordinated with local authorities to ensure seamless operations. The client successfully completed the summit without any security incidents, maintaining full privacy and peace of mind throughout the event.</p>
+            <br>
+            <h3>Private Investigation into Corporate Espionage</h3>
+            <p>Client: Multinational Corporation (Energy Sector)</p>
+            <p>Challenge: The company suspected corporate espionage after a series of confidential documents were leaked, jeopardizing upcoming negotiations.</p>
+            <p>Solution: BlackHex’s investigative team conducted discreet surveillance, digital forensics, and internal employee vetting. Through a combination of intelligence gathering and cybersecurity analysis, we identified the source of the leaks and provided the client with actionable evidence, allowing them to take swift legal action to protect their intellectual property.</p>
+            <br>
+            <h3>Comprehensive Security Management for High-Profile Event</h3>
+            <p>Client: International Film Festival</p>
+            <p>Challenge: The client needed extensive security planning and execution for a week-long film festival featuring A-list celebrities, VIPs, and thousands of attendees.</p>
+            <p>Solution: BlackHex developed a comprehensive security strategy, including guest screening, crowd management, and emergency response planning. Our team of security personnel managed all access points, coordinated with local law enforcement, and monitored the event grounds to ensure a safe and controlled environment. The festival proceeded without any security breaches or disruptions, ensuring the safety of all attendees and participants.</p>
+            </div>
+        <div class="image_description">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <div class="contact_container" id="contact_container">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button class="contact_button" type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer_header">
+            <p>&copy; 2023 BlackHex. All rights reserved.</p>
+        </div>
+        <div class="footer_links">
+            <a href="index.html" style="margin: 0 15px;">Home</a>
+            <a href="#description" style="margin: 0 15px;">About Us</a>
+            <a href="shop.html" style="margin: 0 15px;">Services</a>
+            <a href="#contact_container" style="margin: 0 15px;">Contact</a>
+        </div>
+        <div class="footer_media">   
+            <a href="#" class="Instagram" style="margin: 0 10px;">Instagram</a>
+            <a href="#" class="Twitter" style="margin: 0 10px;">Twitter</a>
+            <a href="#" class="LinkedIn" style="margin: 0 10px;">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>

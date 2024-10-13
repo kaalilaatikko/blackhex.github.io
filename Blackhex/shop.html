@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Blackhex services</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <div class="dropdown" id="dropdownMenu">
+            <a class="dropdown_button" href="index.html">Home</a>
+            <a class="dropdown_button" href="#contact">Contact Us</a>
+            <a class="dropdown_button" href="aboutus.html">About Us</a>
+            <a class="dropdown_button" href="shop.html">Shop</a>
+        </div>
+        <div class="logo">
+            <a href="index.html">⌬black hex</a>
+        </div>
+        <button class="login-btn" onclick="location.href='login.html'">Login</button>
+    </nav>
+
+    <script src="script.js"></script>
+
+    <h2 class="shop_h2">Products and services</h2>
+
+    <div class="product-container">
+        <div class="product" onclick="showProductDetails(1)">
+            <img src="threat_intelligence.jpg" alt="Product 1">
+            <h3>Threat Intelligence Platform</h3>
+            <p>Click to read more</p>
+        </div>
+        <div class="product" onclick="showProductDetails(2)">
+            <img src="firewall.jpg" alt="Product 2">
+            <h3>Advanced Firewall Solutions</h3>
+            <p>Click to read more</p>
+        </div>
+        <div class="product" onclick="showProductDetails(3)">
+            <img src="endpoint_protection.jpg" alt="Product 3">
+            <h3>Endpoint Protection Suite</h3>
+            <p>Click to read more</p>
+        </div>
+        <div class="product" onclick="showProductDetails(4)">
+            <img src="military_encryption.jpg" alt="Product 4">
+            <h3>Military-Grade Encryption Solutions</h3>
+            <p>Click to read more</p>
+        </div>
+        <div class="product" onclick="showProductDetails(5)">
+            <img src="soldier-4771925_1280.jpg" alt="Product 5">
+            <h3>Personal Protection Detail (Executive Protection)</h3>
+            <p>Click to read more</p>
+        </div>
+        <div class="product" onclick="showProductDetails(6)">
+            <img src="private_investigator.jpg" alt="Product 6">
+            <h3>Private Investigator</h3>
+            <p>Click to read more</p>
+        </div>
+        <div class="product" onclick="showProductDetails(7)">
+            <img src="residental_security.jpg" alt="Product 7">
+            <h3>Residential Security Solutions</h3>
+            <p>Click to read more</p>
+        </div>
+        <div class="product" onclick="showProductDetails(8)">
+            <img src="security-guard-6835766_1280.jpg" alt="Product 8">
+            <h3>Event Security Management</h3>
+            <p>Click to read more</p>
+        </div>
+    </div>
+
+    <div id="productDetails" class="product-details">
+        <span class="close" onclick="closeProductDetails()">&times;</span>
+        <img id="detailImage" src="" alt="Product Detail">
+        <h3 id="detailTitle"></h3>
+        <p id="detailDescription"></p>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, name: "Threat Intelligence Platform", description: "Our Threat Intelligence Platform provides real-time analysis of global cyber threats, leveraging AI and machine learning to identify patterns and predict potential attacks. Stay ahead of cybercriminals with up-to-date threat data and actionable insights tailored to your organization’s needs.", image: "threat_intelligence.jpg" },
+            { id: 2, name: "Advanced Firewall Solutions", description: "Our Advanced Firewall Solutions offer unparalleled protection against unauthorized access, malware, and other cyber threats. With state-of-the-art packet inspection and deep learning algorithms, ensure your network is secure at all times.", image: "firewall.jpg" },
+            { id: 3, name: "Endpoint Protection Suite", description: "Our comprehensive Endpoint Protection Suite secures every device in your network, from laptops to mobile phones. It prevents unauthorized access, detects malware, and blocks malicious activity, providing peace of mind for remote work environments.", image: "endpoint_protection.jpg" },
+            { id: 4, name: "Military-Grade Encryption Solutions", description: "Protect sensitive data with our Military-Grade Encryption Solutions. Designed for defense and government agencies, our encryption technology ensures secure communication and data storage, preventing unauthorized access to critical information.", image: "military_encryption.jpg" },
+            { id: 5, name: "Personal Protection Detail (Executive Protection)", description: "Our Personal Protection Detail offers discreet and highly trained security professionals to safeguard executives, high-profile individuals, and VIPs. We provide customized security plans that include close protection, secure transportation, and risk assessments to ensure your safety in any environment.", image: "soldier-4771925_1280.jpg" },
+            { id: 6, name: "Private Investigator", description: "Our Private Investigator Services provide confidential and professional investigations for personal, corporate, and legal matters. Whether it’s background checks, surveillance, or asset tracing, we offer detailed reports and actionable insights tailored to your needs.", image: "private_investigator.jpg" },
+            { id: 7, name: "Residential Security Solutions", description: "Keep your home and family safe with our Residential Security Solutions. We provide comprehensive security assessments, surveillance systems, and on-site security personnel for estates and residential properties, ensuring protection from potential threats and intrusions.", image: "residental_security.jpg" },
+            { id: 8, name: "Event Security Management", description: "Our Event Security Management services offer tailored security solutions for private and public events, ensuring the safety of guests, performers, and staff. From access control to crowd management and emergency response planning, we provide end-to-end security for any size event.", image: "security-guard-6835766_1280.jpg" }
+        ];
+
+        function showProductDetails(productId) {
+            const product = products.find(p => p.id === productId);
+            document.getElementById('detailImage').src = product.image;
+            document.getElementById('detailTitle').innerText = product.name;
+            document.getElementById('detailDescription').innerText = product.description;
+            document.getElementById('productDetails').style.display = 'block';
+        }
+
+        function closeProductDetails() {
+            document.getElementById('productDetails').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('productDetails')) {
+                closeProductDetails();
+            }
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="footer_header">
+            <p>&copy; 2023 BlackHex. All rights reserved.</p>
+        </div>
+        <div class="footer_links">
+            <a href="index.html" style="margin: 0 15px;">Home</a>
+            <a href="#description" style="margin: 0 15px;">About Us</a>
+            <a href="shop.html" style="margin: 0 15px;">Services</a>
+            <a href="#contact_container" style="margin: 0 15px;">Contact</a>
+        </div>
+        <div class="footer_media">   
+            <a href="#" class="Instagram" style="margin: 0 10px;">Instagram</a>
+            <a href="#" class="Twitter" style="margin: 0 10px;">Twitter</a>
+            <a href="#" class="LinkedIn" style="margin: 0 10px;">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>
